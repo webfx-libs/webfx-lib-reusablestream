@@ -40,6 +40,13 @@ public interface ReusableStream<T> extends Spliterable<T> {
 
     ReusableStream<T> distinct();
 
+    default ReusableStream<T> sorted() {
+        return sorted((Comparator<? super T>) Comparator.naturalOrder());
+    }
+
+    ReusableStream<T> sorted(Comparator<? super T> comparator);
+
+
     // Terminal operations (forwarded to stream)
 
     // default void forEach(Consumer<? super T> action) { stream().forEach(action); } // Not necessary as Iterable already has a forEach() default implementation

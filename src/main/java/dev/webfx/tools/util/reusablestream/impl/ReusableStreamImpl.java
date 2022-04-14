@@ -2,6 +2,7 @@ package dev.webfx.tools.util.reusablestream.impl;
 
 import dev.webfx.tools.util.reusablestream.ReusableStream;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Function;
@@ -46,6 +47,11 @@ public final class ReusableStreamImpl<T> implements ReusableStream<T> {
     @Override
     public ReusableStream<T> takeWhile(Predicate<? super T> predicate) {
         return ReusableStream.create(new TakeWhileOperator<>(this, predicate));
+    }
+
+    @Override
+    public ReusableStream<T> sorted(Comparator<? super T> comparator) {
+        return ReusableStream.create(new SortedOperator<>(this, comparator));
     }
 
     @Override
