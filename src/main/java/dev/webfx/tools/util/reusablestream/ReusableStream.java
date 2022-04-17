@@ -101,6 +101,10 @@ public interface ReusableStream<T> extends Spliterable<T> {
         return new ReusableStreamImpl<>(iterable);
     }
 
+    static <T> ReusableStream<T> resumeFromIterator(Iterator<T> iterator) {
+        return fromIterable(() -> iterator);
+    }
+
     static <T> ReusableStream<T> empty() {
         return fromIterable(Collections.emptyList());
     }
