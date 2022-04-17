@@ -2,10 +2,7 @@ package dev.webfx.tools.util.reusablestream;
 
 import dev.webfx.tools.util.reusablestream.impl.ReusableStreamImpl;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.*;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
@@ -17,6 +14,10 @@ import java.util.stream.StreamSupport;
 public interface ReusableStream<T> extends Spliterable<T> {
 
     // API Specific methods (not shared with Stream)
+
+    default boolean isEmpty() {
+        return findFirst().isEmpty();
+    }
 
     ReusableStream<T> cache();
 
