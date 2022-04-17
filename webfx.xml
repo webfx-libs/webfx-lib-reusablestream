@@ -1,5 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project>
+
+    <required-libraries>
+        <library artifact="dev.webfx:webfx-parent:0.1.0-SNAPSHOT"/>
+    </required-libraries>
 
     <exported-packages>
         <source-packages/>
