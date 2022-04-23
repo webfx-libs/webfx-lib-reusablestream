@@ -1,4 +1,4 @@
-package dev.webfx.tools.util.reusablestream.impl;
+package dev.webfx.lib.reusablestream.impl;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

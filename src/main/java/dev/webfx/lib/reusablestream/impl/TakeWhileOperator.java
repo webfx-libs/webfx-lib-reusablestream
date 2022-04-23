@@ -1,6 +1,6 @@
-package dev.webfx.tools.util.reusablestream.impl;
+package dev.webfx.lib.reusablestream.impl;
 
-import dev.webfx.tools.util.reusablestream.Spliterable;
+import dev.webfx.lib.reusablestream.Spliterable;
 
 import java.util.Spliterator;
 import java.util.function.Consumer;

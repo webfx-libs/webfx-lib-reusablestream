@@ -52,8 +52,8 @@
             </dependencies>
 
             <source-packages>
-                <package>dev.webfx.tools.util.reusablestream.impl</package>
-                <package>dev.webfx.tools.util.reusablestream</package>
+                <package>dev.webfx.lib.reusablestream.impl</package>
+                <package>dev.webfx.lib.reusablestream</package>
             </source-packages>
 
         </project>

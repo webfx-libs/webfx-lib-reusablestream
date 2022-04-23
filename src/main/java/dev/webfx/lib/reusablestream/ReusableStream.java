@@ -1,6 +1,6 @@
-package dev.webfx.tools.util.reusablestream;
+package dev.webfx.lib.reusablestream;
 
-import dev.webfx.tools.util.reusablestream.impl.ReusableStreamImpl;
+import dev.webfx.lib.reusablestream.impl.ReusableStreamImpl;
 
 import java.util.*;
 import java.util.function.*;

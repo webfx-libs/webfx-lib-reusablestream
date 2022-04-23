@@ -1,4 +1,4 @@
-package dev.webfx.tools.util.reusablestream;
+package dev.webfx.lib.reusablestream;
 
 import java.util.Iterator;
 import java.util.Spliterator;

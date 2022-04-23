@@ -6,7 +6,7 @@ module webfx.lib.reusablestream {
     requires java.base;
 
     // Exported packages
-    exports dev.webfx.tools.util.reusablestream;
-    exports dev.webfx.tools.util.reusablestream.impl;
+    exports dev.webfx.lib.reusablestream;
+    exports dev.webfx.lib.reusablestream.impl;
 
 }

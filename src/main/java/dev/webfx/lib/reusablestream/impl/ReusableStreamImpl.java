@@ -1,6 +1,6 @@
-package dev.webfx.tools.util.reusablestream.impl;
+package dev.webfx.lib.reusablestream.impl;
 
-import dev.webfx.tools.util.reusablestream.ReusableStream;
+import dev.webfx.lib.reusablestream.ReusableStream;
 
 import java.util.Comparator;
 import java.util.Iterator;
