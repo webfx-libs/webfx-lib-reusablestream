@@ -46,15 +46,17 @@
             </exported-packages>
 
             <dependencies>
-                <used-by-source-modules>
-                    <module>java.base</module>
-                </used-by-source-modules>
+                <used-by-source-modules/>
             </dependencies>
 
             <source-packages>
                 <package>dev.webfx.lib.reusablestream.impl</package>
                 <package>dev.webfx.lib.reusablestream</package>
             </source-packages>
+
+            <used-by-source-modules>
+                <module>java.base</module>
+            </used-by-source-modules>
 
         </project>
 
