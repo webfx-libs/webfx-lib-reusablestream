@@ -21,7 +21,7 @@ public interface ReusableStream<T> extends Spliterable<T> {
 
     ReusableStream<T> cache();
 
-    ReusableStream<T> resume();
+    ReusableStream<T> resumable();
 
     ReusableStream<T> concat(Iterable<? extends T>... iterables);
 

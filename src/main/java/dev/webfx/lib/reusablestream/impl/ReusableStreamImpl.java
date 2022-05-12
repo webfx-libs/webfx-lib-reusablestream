@@ -60,8 +60,8 @@ public final class ReusableStreamImpl<T> implements ReusableStream<T> {
     }
 
     @Override
-    public ReusableStream<T> resume() {
-        return ReusableStream.create(new ResumeOperator<>(this));
+    public ReusableStream<T> resumable() {
+        return ReusableStream.create(new ResumableOperator<>(this));
     }
 
     @Override

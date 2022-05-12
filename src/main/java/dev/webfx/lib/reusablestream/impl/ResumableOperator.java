@@ -7,11 +7,11 @@ import java.util.Spliterator;
 /**
  * @author Bruno Salmon
  */
-final class ResumeOperator<T> extends Operator<T, T> {
+final class ResumableOperator<T> extends Operator<T, T> {
 
     private Spliterator<T> singleOperation;
 
-    ResumeOperator(Spliterable<T> wrappedSpliterable) {
+    ResumableOperator(Spliterable<T> wrappedSpliterable) {
         super(wrappedSpliterable);
     }
 
