@@ -30,17 +30,21 @@ final class SortedOperator<T> extends Operator<T, T> {
 
         @Override
         public boolean tryAdvance(Consumer<? super _T> action) {
-            if (index == 0)
-                while (super.tryAdvance(queue::add));
+            // Filling the queue on first call by pulling all underlying elements
+            if (index == 0) // first call
+                while (super.tryAdvance(queue::add)); // should call onWrappedSpliteratorFullyTraversed() once finished
+            // If the queue is empty or if we reached the last element, we exit
             if (index >= queue.size())
                 return false;
-            action.accept(queue.get(index++));
+            // Otherwise, we pass the next element to the passed action
+            action.accept(queue.get(index++)); // and increment the index by the way for next call
             return true;
         }
 
         @Override
         void onWrappedSpliteratorFullyTraversed() {
-            queue.sort(comparator);
+            // Now that the queue is fully populated, we can sort it
+            queue.sort(comparator); // with the provided comparator
         }
     }
 }

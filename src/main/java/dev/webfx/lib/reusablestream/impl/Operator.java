@@ -95,7 +95,7 @@ abstract class Operator<T, R> implements Spliterable<R> {
         }
 
         void onWrappedSpliteratorFullyTraversed() { // Can be called once the wrapped spliterator has been fully traversed
-            wrappedSpliterator = null; // Forgetting the reference to it so it can be garbage collected to release memory usage
+            wrappedSpliterator = null; // Forgetting the reference to it, so it can be garbage collected to release memory usage
         }
 
         boolean hasWrappedSpliteratorBeenFullyTraversed() {
