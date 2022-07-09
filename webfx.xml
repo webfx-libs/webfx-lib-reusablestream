@@ -50,8 +50,8 @@
             </dependencies>
 
             <source-packages>
-                <package>dev.webfx.lib.reusablestream.impl</package>
                 <package>dev.webfx.lib.reusablestream</package>
+                <package>dev.webfx.lib.reusablestream.impl</package>
             </source-packages>
 
             <used-by-source-modules>
