@@ -14,6 +14,7 @@ import java.util.function.Predicate;
 public final class ReusableStreamImpl<T> implements ReusableStream<T> {
 
     private final Iterable<T> iterable;
+    private String name; // Used only to ease debugging (the name helps the developer to know what this stream is)
 
     public ReusableStreamImpl(Iterable<T> iterable) {
         this.iterable = iterable;
@@ -73,5 +74,24 @@ public final class ReusableStreamImpl<T> implements ReusableStream<T> {
     @SafeVarargs
     public final ReusableStream<T> concat(Iterable<? extends T>... iterables) {
         return ReusableStream.create(new ConcatOperator<>(this, iterables));
+    }
+
+    @Override
+    public ReusableStream<T> name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String nextName() {
+        String nextName = name;
+        if (nextName != null && iterable instanceof ReusableStreamImpl)
+            nextName = ((ReusableStreamImpl) iterable).nextName();
+        if (nextName == null && iterable instanceof Operator)
+            nextName = ((Operator) iterable).nextName();
+        return nextName;
     }
 }

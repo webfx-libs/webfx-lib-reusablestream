@@ -22,6 +22,15 @@ abstract class Operator<T, R> implements Spliterable<R> {
         this.unsized = unsized;
     }
 
+    public String nextName() {
+        String nextName = null;
+        if (wrappedSpliterable instanceof ReusableStreamImpl)
+            nextName = ((ReusableStreamImpl) wrappedSpliterable).nextName();
+        if (nextName == null && wrappedSpliterable instanceof Operator)
+            nextName = ((Operator) wrappedSpliterable).nextName();
+        return nextName;
+    }
+
     @Override
     public Spliterator<R> spliterator() {
         return newOperation();

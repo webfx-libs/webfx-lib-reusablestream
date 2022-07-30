@@ -19,6 +19,8 @@ public interface ReusableStream<T> extends Spliterable<T> {
         return findFirst().isEmpty();
     }
 
+    ReusableStream<T> name(String name);
+
     ReusableStream<T> cache();
 
     ReusableStream<T> resumable();
