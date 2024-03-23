@@ -51,7 +51,8 @@ class FlatMapOperator<T, R> extends Operator<T, R> {
         }
 
         private void setNextRunningMappedSpliterator(_T t) {
-            runningMappedSpliterator = (Spliterator<_R>) mapper.apply(t).spliterator();
+            Iterable<? extends R> iterable = mapper.apply(t);
+            runningMappedSpliterator = iterable == null ? null : (Spliterator<_R>) iterable.spliterator();
         }
     }
 }
